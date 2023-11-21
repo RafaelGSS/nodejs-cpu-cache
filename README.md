@@ -10,5 +10,5 @@ node cache-unfriendly.js  1.04s user 0.13s system 101% cpu 1.145 total
 ```
 
 ```sh
-perf stat -- node cache-unfriendly.js
+perf stat -B -e cache-references,cache-misses,cycles,instructions,branches,fault -- node --interpreted-frames-native-stack --perf-basic-prof cache-unfriendly.js
 ```
